@@ -6,9 +6,6 @@
 ![model](model.jpg?raw=true "model")
 
 
-## 运行说明
-本代码是在Python 2 / TensorFlow 0.12版本下编写的，要在1.0版本下运行需要修改Model.py文件的三个地方：把所有的`tf.nn.rnn_cell`都改成`tf.contrib.rnn`，39行的`tf.concat(1, outputs)`改成`tf.concat(outputs, 1)`，以及50行的`tf.nn.seq2seq.sequence_loss_by_example`改成`tf.contrib.legacy_seq2seq.sequence_loss_by_example`。
-
 #### 模型参数设置（在Config.py文件中设置）：
 - init_scale：参数使用均匀分布进行初始化，该值为均匀分布的上下界
 - learning_rate：学习率
